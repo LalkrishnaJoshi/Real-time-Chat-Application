@@ -1,0 +1,39 @@
+Objective : To create a realtime chat application with NodeJs and Socket.io
+
+
+theory: why not use a database?
+        the problem is that client and server is one way communication meaning if client sends request to the server 
+        then only server will respond (this is done with the help of get  and post requests ) , server won't say to client 
+        hey take this unless client requests it.
+
+       To create realtime chat application we will need two way communication that can be done with the
+       help of web sockets , it is a two way communication means if client has update it will send it to web sockets
+       and if web socket has update it will send it to client , similar to http and https we have ws(web socket) and wss
+       (secured web socket) protocol to create apps using web sockets.  
+
+       To build this project we will be using Sokcet.io library , socket.io is a javascript library to create realtime
+       web applications.
+
+
+       about Sokcet.io :
+        Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a 
+        client and a server.It is built on top of the WebSocket protocol and provides additional guarantees like
+        fallback to HTTP long-polling or automatic reconnection.
+
+
+        so we will be establishing web socket connection between client and server (server will be NodeJS backend),
+        here web server can emit event and client can listen as the same time client may emit event and server will 
+        listen , to build this project with the help of database we will have to store data in database and client
+        will read it which becomes inefficient to solve this issue we have web sockets that we will be using
+
+
+
+    we will be using two servers one is client server(that is a independet site that will connect with Node sevrer ) 
+    and one will be Node server.
+
+    one we have Node Server and one we have is client server that is running on 5500 that we created initially,
+    remember node server is differet and the website we created is different
+
+
+    Imp : a standalone build of client is exposed by default by the server at /socket.io/socket.io.js
+          this will do the connection to the client and sevrer
